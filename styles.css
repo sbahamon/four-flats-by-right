@@ -1,0 +1,630 @@
+/* Base styles */
+:root {
+    --primary: #5D49A5;
+    --primary-dark: #3F2E7E; /* Darker for better contrast */
+    --primary-light: #7E6DB8;
+    --secondary: #FF8366; /* Darker for better contrast */
+    --secondary-dark: #E25C40;
+    --light: #F8F9FA;
+    --light-gray: #E9ECEF;
+    --gray: #6C757D;
+    --dark-gray: #343A40;
+    --dark: #212529;
+}
+
+/* Focus styles for accessibility */
+:focus {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* Skip to main content link for keyboard users */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-dark);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    background-color: #fff;
+    font-size: 16px;
+    /* Improved text sizing and spacing for accessibility */
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+    color: var(--dark-gray);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* Section layout */
+section {
+    padding: 3.5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cards */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    margin-top: 0;
+    color: var(--dark);
+}
+
+/* Header */
+.site-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.site-header h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500; /* Increased weight for better contrast */
+    margin-bottom: 0;
+    /* Removed opacity for better contrast */
+}
+
+/* Navigation */
+.nav-container {
+    border-bottom: 1px solid var(--light-gray);
+    background-color: white;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;
+}
+
+.nav-list a {
+    color: var(--dark); /* Darker color for better contrast */
+    font-weight: 600; /* Bolder for better readability */
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-list a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+/* Simple navigation (back links) */
+.simple-nav {
+    padding: 1.5rem 0;
+}
+
+.simple-nav a {
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.simple-nav a:hover {
+    text-decoration: none;
+    transform: translateX(-3px);
+}
+
+/* Hero section */
+.hero {
+    background-color: var(--light);
+    padding: 0;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2.5rem;
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 720px;
+}
+
+.hero-text h2 {
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Open letter section */
+.open-letter {
+    background-color: white;
+}
+
+.intro-paragraph {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: var(--dark);
+}
+
+.key-points {
+    background-color: var(--light);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.key-points p {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.key-points ul {
+    margin-bottom: 0;
+}
+
+/* Take action section */
+.take-action {
+    background-color: var(--light);
+}
+
+.action-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.action-content {
+    padding: 2rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: white;
+}
+
+.button-secondary {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    border: 1px solid var(--gray); /* Added border for better visibility */
+}
+
+.button-secondary:hover {
+    background-color: #dde2e6;
+    color: var(--dark);
+}
+
+.share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.share-buttons .button {
+    margin: 0;
+}
+
+/* Myth busting section */
+.myth-busting {
+    background-color: white;
+}
+
+.myth {
+    margin-bottom: 3rem;
+}
+
+.myth:last-child {
+    margin-bottom: 0;
+}
+
+.myth h3 {
+    color: var(--dark);
+}
+
+.reality {
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin-top: 1rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.reality h4 {
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.reality p:last-child {
+    margin-bottom: 0;
+}
+
+.myth-image {
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Supporters section */
+.supporters {
+    background-color: var(--light);
+}
+
+.support-intro {
+    margin-bottom: 2rem;
+}
+
+.supporters-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.supporters-list li {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.supporters-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.join-supporters {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.95); /* Increased contrast */
+    margin-bottom: 0.75rem;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Resources and Take Action pages */
+.resources-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.event-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.event-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.event-item h3 {
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.resource-section {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.resource-header {
+    padding: 2rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.resource-content {
+    padding: 2rem;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: white;
+}
+
+.evidence-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.evidence-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.evidence-item h4 {
+    margin-top: 0;
+}
+
+.map-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.map-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.map-section h4 {
+    margin-top: 0;
+}
+
+.map-caption {
+    font-style: italic;
+    color: var(--dark-gray); /* Darker text for better contrast */
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.95rem; /* Slightly larger for better readability */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.25rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+        padding: 5rem 0;
+    }
+    
+    .hero-image {
+        width: 50%;
+        margin-bottom: 0;
+    }
+    
+    .hero-text {
+        width: 50%;
+        text-align: left;
+    }
+    
+    .action-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .action-box {
+        margin-bottom: 0;
+    }
+}
