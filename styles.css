@@ -480,13 +480,13 @@ footer p:last-child {
 
 footer a {
     color: white;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+    text-decoration: underline;
+    transition: all 0.2s ease;
 }
 
 footer a:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 /* Resources and Take Action pages */
