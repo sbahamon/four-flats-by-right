@@ -595,6 +595,11 @@ footer a:hover {
     font-size: 0.95rem; /* Slightly larger for better readability */
 }
 
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
 /* Small screens */
 @media (max-width: 576px) {
     img {
