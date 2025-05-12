@@ -324,7 +324,7 @@ section {
 
 /* Take action section */
 .take-action {
-    background-color: var(--light);
+    /* background-color: var(--light); */
 }
 
 .action-box {
