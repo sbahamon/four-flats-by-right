@@ -597,6 +597,26 @@ footer a:hover {
     font-size: 0.95rem; /* Slightly larger for better readability */
 }
 
+.contact-email {
+    text-align: center;
+    padding: 30px 20px; /* Increased top/bottom padding */
+    background-color: #f0eff5; /* Very light primary color */
+    margin-top: 40px; /* Increased space above the footer */
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: var(--dark); /* Ensure text color is readable */
+    border-top: 1px solid var(--light-gray); /* Add a subtle top border */
+}
+
+.contact-email a {
+    color: var(--primary-dark); /* Make the link color stand out */
+    text-decoration: underline;
+}
+
+.contact-email a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
 /* Utility Classes */
 .hidden {
     display: none;
