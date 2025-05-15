@@ -163,6 +163,13 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.supporters-list li img {
+    max-height: 70px; /* Example size, can be adjusted */
+    max-width: 140px; /* Example size, can be adjusted */
+    display: block;
+    margin: 0 auto 10px; /* Center the image and add space below */
+}
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
